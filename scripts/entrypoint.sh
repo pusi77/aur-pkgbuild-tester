@@ -8,9 +8,9 @@ chown -R tester:wheel /opt/pkgdir
 cd /opt/pkgdir
 rm -f *.tar.zst
 # Install makepkg deps
-pacman -Sy git --noconfirm
-# install yay
-su - tester /opt/scripts/install-yay.sh
+pacman -Sy --needed base-devel git --noconfirm
+# install paru
+su - tester /opt/scripts/install-paru.sh
 # install dependencies
 su - tester /opt/scripts/install-dependencies.sh
 # Build the package as `tester' user
