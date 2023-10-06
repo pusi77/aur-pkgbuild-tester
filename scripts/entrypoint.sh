@@ -19,4 +19,8 @@ su - tester /opt/scripts/build-pkg.sh
 cd /opt/pkgdir
 pacman -U *.tar.zst --noconfirm
 # Run the test
-bash /opt/test.sh
+if test -f /opt/test.sh; then
+    bash /opt/test.sh
+fi
+
+
