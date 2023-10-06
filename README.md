@@ -38,3 +38,8 @@ Then, inside the container, it creates a non-root user to build the package (run
 
 After building and installing the package, the script runs a _tester_ script, which by default is `/bin/true` but that can be overridden by passing the second argument to the script. The purpose of this tester script is making sure that the application installed works correctly.
 
+## Installation
+The worst, most insecure and totally inadvisable (but easiest) way to install the script is:
+```
+wget -O - https://raw.githubusercontent.com/pusi77/aur-pkgbuild-tester/master/install.sh | sudo bash
+```
