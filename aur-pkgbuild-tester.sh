@@ -2,7 +2,7 @@
 set -e
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <PKGBUILD_directory>"
+    echo "Usage: aur-pkgbuild-tester <PKGBUILD_directory>"
     exit 1
 fi
 
