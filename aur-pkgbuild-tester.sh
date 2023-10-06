@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 set -e
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <PKGBUILD_directory>"
+    exit 1
+fi
+
 DATADIR=$(readlink -f $1)
 TESTER=$(readlink -f scripts/default-noop-tester.sh)
 if [ ! -z "$2" ]; then
