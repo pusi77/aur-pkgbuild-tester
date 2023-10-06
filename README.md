@@ -41,5 +41,5 @@ After building and installing the package, the script runs a _tester_ script, wh
 ## Installation
 The worst, most insecure and totally inadvisable (but easiest) way to install the script is:
 ```
-wget -O - https://raw.githubusercontent.com/pusi77/aur-pkgbuild-tester/master/install.sh | sudo bash
+wget -O - https://raw.githubusercontent.com/pusi77/aur-pkgbuild-tester/master/install.sh | bash
 ```
