@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+INSTALL_DIR="/opt/aur-pkgbuild-tester"
+SCRIPT_DIR="$INSTALL_DIR/scripts"
+
 if [ $# -lt 1 ]; then
     echo "Usage: aur-pkgbuild-tester <PKGBUILD_directory> [test_bash_script]"
     exit 1
@@ -22,14 +25,14 @@ if [ ! -z "$2" ]; then
     docker run --rm -it \
         -v "$DATADIR/:/opt/pkgdir" \
         -v "$TESTER:/opt/test.sh" \
-        -v "$(pwd)/scripts:/opt/scripts" \
+        -v "$SCRIPT_DIR:/opt/scripts" \
         archlinux:base-devel \
         /opt/scripts/entrypoint.sh
 else
     docker pull archlinux:base-devel
     docker run --rm -it \
         -v "$DATADIR/:/opt/pkgdir" \
-        -v "$(pwd)/scripts:/opt/scripts" \
+        -v "$SCRIPT_DIR:/opt/scripts" \
         archlinux:base-devel \
         /opt/scripts/entrypoint.sh
 fi
