@@ -8,7 +8,7 @@ chown -R tester:wheel /opt/pkgdir
 cd /opt/pkgdir
 rm -f *.tar.zst
 # Install makepkg deps
-pacman -Sy --needed base-devel git --noconfirm
+pacman -Syu --needed base-devel git --noconfirm
 # install paru
 su - tester /opt/scripts/install-paru.sh
 # install dependencies
